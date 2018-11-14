@@ -1,0 +1,7 @@
+@model CommentList
+
+@foreach (var comment in @Model.Comments) {
+    <div>
+        <p>@comment.text</p>
+    </div>
+}

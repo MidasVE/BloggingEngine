@@ -1,0 +1,19 @@
+@model EntityFrameworkMvc.DataAccess.Post
+
+<div>
+    <h2>
+        @Model.title
+    </h2>
+    <p>@Model.content</p>
+    <i>written by @Model.author - uploaded @Model.date</i>
+</div>
+<div>
+    <form asp-controller="Blog" asp-action="Comment" method="post">
+        <input name="postId" type="hidden" value=@Model.id />
+        <input name="text" type="text">
+        <button type="submit">comment</button>
+    </form>
+</div>
+<div>
+    <a href="/Blog">back</a>
+</div>

@@ -1,0 +1,12 @@
+@model EntityFrameworkMvc.DataAccess.Post
+
+<form asp-action="CreatePost" method="post">
+    <label for="title">Title</label>
+    <input asp-for=@Model.title name="title" type="text"/>
+    <label for="title">Content</label>
+    <input asp-for=@Model.content name="content" type="text"/>
+    <label for="title">Author</label>
+    <input asp-for=@Model.author name="author" type="text"/>
+    <input type="hidden" asp-for=@Model.date value=@DateTime.Now name="date">
+    <button type="submit">Create</button>
+</form>

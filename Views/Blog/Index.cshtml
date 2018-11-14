@@ -1,0 +1,19 @@
+@model Blog
+
+@foreach (var post in @Model.Posts) {
+    <div>
+        <h2><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
+        <p>@post.content</p>
+        <i>written by @post.author - uploaded @post.date</i>
+        <div>
+            <a asp-controller="Blog" asp-action="Delete" asp-route-id=@post.id>delete post</a>
+            <a asp-controller="Blog" asp-action="Edit" asp-route-id=@post.id>edit post</a>
+            <a asp-controller="Blog" asp-action="ViewComments" asp-route-id=@post.id>view comments</a>
+        </div>
+    </div>
+}
+
+<div>
+    <br>
+    <a href="/Blog/Create">Create a new post</a>
+</div>
