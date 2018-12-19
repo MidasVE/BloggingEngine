@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using BloggingEngine.Models;
+using Microsoft.Extensions.Logging;
 
 namespace BloggingEngine.Controllers
 {
@@ -15,6 +16,7 @@ namespace BloggingEngine.Controllers
             return View();
         }
 
+        [PokeActionFilter]
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
@@ -22,6 +24,7 @@ namespace BloggingEngine.Controllers
             return View();
         }
 
+        [PokeActionFilter]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

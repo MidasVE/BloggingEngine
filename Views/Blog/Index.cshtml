@@ -1,9 +1,11 @@
 @model Blog
 
+<h1>Blog</h1>
+
 @foreach (var post in @Model.Posts) {
     <div>
-        <h2><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
-        <p>@post.content</p>
+        <h2 class=""><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
+        <p>@Html.Raw(@post.content)</p>
         <i>written by @post.author - uploaded @post.date</i>
         <div>
             <a asp-controller="Blog" asp-action="Delete" asp-route-id=@post.id>delete post</a>

@@ -34,3 +34,5 @@ D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\obj\Debug\netcoreapp2.1\Razor\Views\Bl
 D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\obj\Debug\netcoreapp2.1\Razor\Views\Blog\Create.g.cshtml.cs
 D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\obj\Debug\netcoreapp2.1\Razor\Views\Blog\Detail.g.cshtml.cs
 D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\obj\Debug\netcoreapp2.1\Razor\Views\Blog\Edit.g.cshtml.cs
+D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\obj\Debug\netcoreapp2.1\Razor\Views\Blog\ViewComments.g.cshtml.cs
+D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\bin\Debug\netcoreapp2.1\nlog.config

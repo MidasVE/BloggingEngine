@@ -12,6 +12,8 @@ namespace BloggingEngine.Controllers {
         public BlogController(BloggingContext blogContext) {
             _bloggingContext = blogContext;
         }
+
+        [PokeActionFilter]
         public IActionResult Index() {
             var blogPosts = _bloggingContext.Post.ToList();
             var list = new Blog();
@@ -39,7 +41,7 @@ namespace BloggingEngine.Controllers {
 
             _bloggingContext.Add < Post > (post);
             _bloggingContext.SaveChanges();
-
+            // model bijmaken in bloggingcontext voor blogdetail + comments
             return RedirectToAction("Index");
         }
 

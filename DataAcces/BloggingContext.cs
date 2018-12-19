@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkMvc.DataAccess
@@ -21,6 +22,7 @@ namespace EntityFrameworkMvc.DataAccess
         public string content { get; set; }
         public string author { get; set; }
         public string date { get; set; }
+        public List<Comment> Comments { get; set; }      
     }
 
     public class Comment 
@@ -29,4 +31,5 @@ namespace EntityFrameworkMvc.DataAccess
         public int postId { get; set; }
         public string text { get; set; }
     }
+
 }

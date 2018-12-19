@@ -1,10 +1,10 @@
 @model EntityFrameworkMvc.DataAccess.Post
 
-<div>
+<div class="row">
     <h2>
         @Model.title
     </h2>
-    <p>@Model.content</p>
+    <p style="white-space:pre-wrap">@Html.Raw(@Model.content)</p>
     <i>written by @Model.author - uploaded @Model.date</i>
 </div>
 <div>

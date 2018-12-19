@@ -32,7 +32,7 @@ namespace BloggingEngine
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         
-              services.AddDbContext<BloggingContext>(opt => opt.UseSqlite(@"Data Source=D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\blog.db"));
+            services.AddDbContext<BloggingContext>(opt => opt.UseSqlite(@"Data Source=D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\blog.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
