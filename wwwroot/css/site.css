@@ -35,3 +35,24 @@ body {
         display: none;
     }
 }
+
+.glyphicon {
+    margin-right: 0.5em;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.mb-1 {
+    margin-bottom: 1em;
+}
+
+.jumbotron, .comment {
+    background: white;
+    box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.1);
+}
+
+.comment {
+    padding: 1em;
+}

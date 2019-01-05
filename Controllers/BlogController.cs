@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System;
 using EntityFrameworkMvc.DataAccess;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 
 namespace BloggingEngine.Controllers {
     public class BlogController: Controller {
@@ -21,8 +22,9 @@ namespace BloggingEngine.Controllers {
             return View(list);
         }
 
-        public IActionResult Detail([FromRoute] int id) {
-            var blogPost = _bloggingContext.Post.Where(b => b.id == id).FirstOrDefault();
+        [HttpGet("blog/detail/{postId}")]
+        public IActionResult Detail([FromRoute] int postId) {
+            Post blogPost = _bloggingContext.Post.Include(b => b.Comments).Where(b => b.id == postId).FirstOrDefault();
             return View(blogPost);
         }
 
@@ -78,14 +80,7 @@ namespace BloggingEngine.Controllers {
             _bloggingContext.Add < Comment > (comment);
             _bloggingContext.SaveChanges();
 
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult ViewComments ([FromRoute] int id) {
-            var comments = _bloggingContext.Comment.Where(c => c.postId == id).ToList();
-            var list = new CommentList();
-            list.Comments = comments;
-            return View(list);
+            return RedirectToAction("Detail", new {id = c.postId});
         }
     }
 }

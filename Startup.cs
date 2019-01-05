@@ -1,5 +1,4 @@
-﻿using BloggingEngine.Models;
-using EntityFrameworkMvc.DataAccess;
+﻿using EntityFrameworkMvc.DataAccess;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,7 +31,7 @@ namespace BloggingEngine
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         
-            services.AddDbContext<BloggingContext>(opt => opt.UseSqlite(@"Data Source=D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\blog.db"));
+            services.AddDbContext<BloggingContext>(opt => opt.UseSqlite(@"Data Source=blog.db"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

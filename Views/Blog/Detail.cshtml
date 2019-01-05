@@ -1,4 +1,5 @@
 @model EntityFrameworkMvc.DataAccess.Post
+@using EntityFrameworkMvc.DataAccess
 
 <div class="row">
     <h2>
@@ -11,8 +12,15 @@
     <form asp-controller="Blog" asp-action="Comment" method="post">
         <input name="postId" type="hidden" value=@Model.id />
         <input name="text" type="text">
-        <button type="submit">comment</button>
+        <button class="btn" type="submit">comment</button>
     </form>
+</div>
+<div>
+    <ul class="list-unstyled">
+    @foreach(Comment comment in @Model.Comments) {
+        <li class="comment mt-1 mb-1">@comment.text</li>
+    }
+    </ul>
 </div>
 <div>
     <a href="/Blog">back</a>

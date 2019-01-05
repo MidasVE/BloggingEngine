@@ -1,12 +1,20 @@
 @model EntityFrameworkMvc.DataAccess.Post
 
-<form asp-action="CreatePost" method="post">
-    <label for="title">Title</label>
-    <input asp-for=@Model.title name="title" type="text"/>
-    <label for="title">Content</label>
-    <textarea asp-for=@Model.content name="content"></textarea>
-    <label for="title">Author</label>
-    <input asp-for=@Model.author name="author" type="text"/>
+<form class="mt-1" asp-action="CreatePost" method="post">
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input class="form-control" asp-for=@Model.title name="title" type="text" />
+    </div>
+    <div class="form-group">
+        <label for="title">Content</label>
+        <textarea class="form-control"  asp-for=@Model.content name="content"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="title">Author</label>
+        <input class="form-control"  asp-for=@Model.author name="author" type="text" />
+    </div>
     <input type="hidden" asp-for=@Model.date value=@DateTime.Now name="date">
-    <button type="submit">Create</button>
+    <div class="form-group">
+        <button class="btn" type="submit">Create</button>
+    </div>
 </form>

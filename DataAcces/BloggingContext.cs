@@ -30,6 +30,7 @@ namespace EntityFrameworkMvc.DataAccess
         public int id { get; set; }
         public int postId { get; set; }
         public string text { get; set; }
+        public Post post { get; set; }
     }
 
 }

@@ -1,21 +1,26 @@
 @model Blog
 
-<h1>Blog</h1>
-
+<h1 class="page-header row">
+        <span class="col-md-4">Blog</span>
+        <a class="btn btn-primary col-md-2 col-md-offset-6" href="/Blog/Create">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                Create a new post
+        </a>
+</h1>
 @foreach (var post in @Model.Posts) {
-    <div>
-        <h2 class=""><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
-        <p>@Html.Raw(@post.content)</p>
-        <i>written by @post.author - uploaded @post.date</i>
-        <div>
-            <a asp-controller="Blog" asp-action="Delete" asp-route-id=@post.id>delete post</a>
-            <a asp-controller="Blog" asp-action="Edit" asp-route-id=@post.id>edit post</a>
-            <a asp-controller="Blog" asp-action="ViewComments" asp-route-id=@post.id>view comments</a>
-        </div>
-    </div>
-}
+<div class="jumbotron">
+    <h2 class=""><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
+    <p>@Html.Raw(@post.content)</p>
+    <i>written by @post.author - uploaded @post.date</i>
+    <div class="mt-1">
+        
 
-<div>
-    <br>
-    <a href="/Blog/Create">Create a new post</a>
+        <a class="btn btn-primary" asp-controller="Blog" asp-action="Edit" asp-route-id=@post.id><span class="glyphicon glyphicon-edit"
+                aria-hidden="true"></span>edit post</a>
+
+        <a class="btn btn-danger" asp-controller="Blog" asp-action="Delete" asp-route-id=@post.id><span class="glyphicon glyphicon-trash"
+                aria-hidden="true"></span>delete post</a>
+    </div>
+</div>
+}
 </div>
