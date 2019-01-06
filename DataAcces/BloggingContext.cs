@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using BloggingEngine.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace EntityFrameworkMvc.DataAccess
@@ -14,23 +16,4 @@ namespace EntityFrameworkMvc.DataAccess
         public DbSet<Post> Post { get; internal set; }
         public DbSet<Comment> Comment { get; internal set; }
     }
-
-    public class Post
-    {
-        public int id { get; set; }
-        public string title { get; set; }
-        public string content { get; set; }
-        public string author { get; set; }
-        public string date { get; set; }
-        public List<Comment> Comments { get; set; }      
-    }
-
-    public class Comment 
-    {
-        public int id { get; set; }
-        public int postId { get; set; }
-        public string text { get; set; }
-        public Post post { get; set; }
-    }
-
 }

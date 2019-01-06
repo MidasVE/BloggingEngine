@@ -75,7 +75,7 @@ using BloggingEngine.Models;
             WriteLiteral("<div class=\"jumbotron\">\r\n    <h2 class=\"\">");
             EndContext();
             BeginContext(391, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "497a5ba42cb748509875a1a633d5fcb8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b8a97b425de84ccc9520dd1386ad8c95", async() => {
                 BeginContext(459, 10, false);
 #line 12 "D:\OneDrive\TM\IMD3\dotnet\BloggingEngine\Views\Blog\Index.cshtml"
                                                                                Write(post.title);
@@ -146,7 +146,7 @@ using BloggingEngine.Models;
             WriteLiteral("</i>\r\n    <div class=\"mt-1\">\r\n        \r\n\r\n        ");
             EndContext();
             BeginContext(619, 184, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7198e1dc69f45cb8b4a239769514285", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8a0f69ce0f1b4e229428e23a15968bee", async() => {
                 BeginContext(708, 91, true);
                 WriteLiteral("<span class=\"glyphicon glyphicon-edit\"\r\n                aria-hidden=\"true\"></span>edit post");
                 EndContext();
@@ -184,7 +184,7 @@ using BloggingEngine.Models;
             WriteLiteral("\r\n\r\n        ");
             EndContext();
             BeginContext(815, 188, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c1d394e13394f53a8c4a9c560759133", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9208127fd3f642489ce363769dcffe9c", async() => {
                 BeginContext(905, 94, true);
                 WriteLiteral("<span class=\"glyphicon glyphicon-trash\"\r\n                aria-hidden=\"true\"></span>delete post");
                 EndContext();

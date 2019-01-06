@@ -1,17 +1,23 @@
-@model EntityFrameworkMvc.DataAccess.Post
+@model Post
 
 <form class="mt-1" asp-action="CreatePost" method="post">
+
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <div class="form-group">
         <label for="title">Title</label>
         <input class="form-control" asp-for=@Model.title name="title" type="text" />
+        <span asp-validation-for=@Model.title class="text-danger"></span>        
     </div>
     <div class="form-group">
-        <label for="title">Content</label>
-        <textarea class="form-control"  asp-for=@Model.content name="content"></textarea>
+        <label for="content">Content</label>
+        <textarea class="form-control" asp-for=@Model.content name="content"></textarea>
+        <span asp-validation-for=@Model.content class="text-danger"></span> 
     </div>
     <div class="form-group">
-        <label for="title">Author</label>
-        <input class="form-control"  asp-for=@Model.author name="author" type="text" />
+        <label for="author">Author</label>
+        <input class="form-control" asp-for=@Model.author name="author" type="text" />
+        <span asp-validation-for=@Model.author class="text-danger"></span> 
     </div>
     <input type="hidden" asp-for=@Model.date value=@DateTime.Now name="date">
     <div class="form-group">

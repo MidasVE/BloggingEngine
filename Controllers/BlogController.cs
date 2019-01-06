@@ -34,17 +34,20 @@ namespace BloggingEngine.Controllers {
 
         [HttpPost]
         public IActionResult CreatePost([FromForm] Post p) {
-            var post = new Post {
-                title = p.title,
-                content = p.content,
-                author = p.author,
-                date = p.date
-            };
+            if (ModelState.IsValid) {
+                var post = new Post {
+                    title = p.title,
+                    content = p.content,
+                    author = p.author,
+                    date = p.date
+                };
 
-            _bloggingContext.Add < Post > (post);
-            _bloggingContext.SaveChanges();
-            // model bijmaken in bloggingcontext voor blogdetail + comments
-            return RedirectToAction("Index");
+                _bloggingContext.Add < Post > (post);
+                _bloggingContext.SaveChanges();
+
+                return RedirectToAction("Index");
+            }
+            return View("Create");            
         }
 
         public IActionResult Delete([FromRoute] int id) {
@@ -54,23 +57,30 @@ namespace BloggingEngine.Controllers {
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public IActionResult Edit([FromRoute] int id) {
             var blogPost = _bloggingContext.Post.Where(b => b.id == id).FirstOrDefault();
             return View(blogPost);
         }
 
-        public IActionResult EditPost([FromForm] Post p) {
+        [HttpPost]
+        public IActionResult Edit([FromForm] Post p) {
             var blogPost = _bloggingContext.Post.Where(b => b.id == p.id).FirstOrDefault();
 
-            blogPost.title = p.title;
-            blogPost.content = p.content;
-            blogPost.author = p.author;
-            blogPost.date = p.date;
-            _bloggingContext.SaveChanges();
+            if (ModelState.IsValid) {                
+                blogPost.title = p.title;
+                blogPost.content = p.content;
+                blogPost.author = p.author;
+                blogPost.date = p.date;
+                _bloggingContext.SaveChanges();
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            return View(blogPost);            
         }
 
+        [HttpPost]
         public IActionResult Comment([FromForm] Comment c) {
             var comment = new Comment {
                 text = c.text,
