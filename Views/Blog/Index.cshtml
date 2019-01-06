@@ -7,20 +7,26 @@
                 Create a new post
         </a>
 </h1>
+@if (@Model.Posts.Count < 1) {
+        <div>
+                There are no posts yet...
+        </div>
+} else {
 @foreach (var post in @Model.Posts) {
-<div class="jumbotron">
-    <h2 class=""><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
-    <p>@Html.Raw(@post.content)</p>
-    <i>written by @post.author - uploaded @post.date</i>
-    <div class="mt-1">
-        
-
-        <a class="btn btn-primary" asp-controller="Blog" asp-action="Edit" asp-route-id=@post.id><span class="glyphicon glyphicon-edit"
-                aria-hidden="true"></span>edit post</a>
-
-        <a class="btn btn-danger" asp-controller="Blog" asp-action="Delete" asp-route-id=@post.id><span class="glyphicon glyphicon-trash"
-                aria-hidden="true"></span>delete post</a>
-    </div>
+        <div class="jumbotron">
+        <h2 class=""><a asp-controller="Blog" asp-action="Detail" asp-route-id=@post.id>@post.title</a></h2>
+        <p>@Html.Raw(@post.content)</p>
+        <i>written by @post.author - uploaded @post.date</i>
+        <div class="mt-1">
+                <a class="btn btn-primary" asp-controller="Blog" asp-action="Edit" asp-route-id=@post.id>
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true">
+                        </span>edit post
+                </a>
+                <a class="btn btn-danger" asp-controller="Blog" asp-action="Delete" asp-route-id=@post.id>
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true">
+                        </span>delete post
+                </a>
+        </div>
 </div>
 }
-</div>
+}
