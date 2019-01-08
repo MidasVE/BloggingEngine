@@ -17,9 +17,13 @@
         <span asp-validation-for=@Model.content class="text-danger"></span>      
     </div>
     <div class="form-group">
-        <label for="title">Author</label>
-        <input class="form-control" asp-for=@Model.author name="author" input="text" value=@Model.author />
-        <span asp-validation-for=@Model.author class="text-danger"></span>      
+        <label for="author">Author</label>
+        <select class="form-control" asp-for=@Model.author name="author">
+            <option>Midas</option>
+            <option>Bob</option>
+            <option>Dirk</option>
+        </select>
+        <span asp-validation-for=@Model.author class="text-danger"></span> 
     </div>
     <input type="hidden" asp-for=@Model.date value=@DateTime.Now name="date">
     <button class="btn" type="submit">Edit</button>

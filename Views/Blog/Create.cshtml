@@ -16,7 +16,11 @@
     </div>
     <div class="form-group">
         <label for="author">Author</label>
-        <input class="form-control" asp-for=@Model.author name="author" type="text" />
+        <select class="form-control" asp-for=@Model.author name="author">
+            <option>Midas</option>
+            <option>Bob</option>
+            <option>Dirk</option>
+        </select>
         <span asp-validation-for=@Model.author class="text-danger"></span> 
     </div>
     <input type="hidden" asp-for=@Model.date value=@DateTime.Now name="date">
